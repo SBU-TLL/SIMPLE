@@ -1,0 +1,376 @@
+.blink {
+    color: red;
+    animation: blink-animation .5s steps(5, start) 3;
+    -webkit-animation: blink-animation .5s steps(5, start) 3;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#dragHome {
+    position: absolute;
+    z-index: 1000;
+    left: -70%;
+}
+
+.map {
+    position: absolute;
+}
+
+#tempMessage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    left: 0%;
+    top: 0%;
+    z-index: 1000;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+#messageDisplayBox {
+    text-align: center;
+    line-height: 200%;
+    background-color: #3a3a3a;
+    color: white;
+    display: block;
+    border: solid 1rem black;
+    width: 55%;
+    height: 5%;
+    left: 18%;
+    top: 1.5%;
+    position: absolute;
+    margin: 5%;
+}
+
+#userInput {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 100%;
+    text-align: left;
+    outline: none;
+}
+
+#guessBox {
+    line-height: 200%;
+    color: white;
+    display: block;
+    width: 30%;
+    height: 5%;
+    left: 33.3%;
+    bottom: 9.4%;
+    position: absolute;
+    text-align: center;
+}
+
+#userInput {
+    background: transparent;
+    border: none;
+    text-align: center;
+}
+
+#healthDisplayBox {
+    text-align: center;
+    line-height: 200%;
+    background-color: #3a3a3a;
+    color: white;
+    display: block;
+    border: solid 1rem black;
+    width: 25%;
+    height: 5%;
+    left: 62.25%;
+    bottom: 9%;
+    position: absolute;
+}
+
+#heart1,
+#heart2,
+#heart3 {
+    height: 100%;
+    transform-origin: 0 0;
+    top: 2.5%;
+    position: absolute;
+    visibility: visible;
+}
+
+#heart1 {
+    left: 8.75%;
+}
+
+#heart2 {
+    left: 41.75%;
+}
+
+#heart3 {
+    left: 74.75%;
+}
+
+#picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+body {
+    font-size: 5rem;
+}
+
+ul {
+    border: solid black 0rem;
+    width: 206rem;
+    list-style-type: none;
+    border: 0rem;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+@keyframes embiggenKeys {
+    0% {
+        color: white;
+    }
+    100% {
+        color: red;
+    }
+}
+
+#leftnav {
+    width: 40%;
+    height: 53.3333%;
+    left: 9%;
+    top: 23.333%;
+    position: absolute;
+}
+
+#layerName {
+    width: 70%;
+    height: 100%;
+    font-size: 75%;
+    left: 3%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+#headerName {
+    width: 90%;
+    margin-top: 12%;
+    margin-left: 5%;
+}
+
+#headerName li {
+    color: black;
+    background-color: #98AFC7;
+}
+
+li {
+    text-align: center;
+    font-family: 'Inconsolata';
+    line-height: 200%;
+    color: white;
+    display: block;
+    border-radius: 50%;
+    border: 1rem solid black;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50rem;
+    list-style-type: none;
+    margin: 0.5%;
+    padding: 0rem;
+    cursor: pointer;
+    background-color: #3a3a3a;
+}
+
+#message {
+    position: relative;
+    font-family: 'Inconsolata';
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 80%;
+}
+
+#scoreDisplay {
+    position: relative;
+    font-family: 'Inconsolata';
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#playAgainText {
+    position: relative;
+    font-family: 'Inconsolata';
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+#textInput {
+    font-family: 'Inconsolata';
+}
+
+#buttonBox li {
+    padding: 0% 5% 0% 5%;
+    float: left;
+}
+
+#buttonBox li:first-child {
+    color: white;
+    background-color: #3a3a3a;
+}
+
+#buttonBox {
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    line-height: 200%;
+    color: white;
+    width: 90%;
+    left: 5%;
+    top: 93%;
+    position: absolute;
+}
+
+#picture {
+    width: 100%;
+    height: 100%;
+}
+
+#nav {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+}
+
+#displayCorrect,
+#imagemap,
+#displayCorrect img {
+    top: 0rem;
+    left: 0rem;
+    position: absolute;
+}
+
+#displayCorrect img {
+    display: none;
+}
+
+#background,
+#imagemap,
+#displayCorrect,
+#dragHome {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 0;
+    padding-top: 0%;
+}
+
+#heart1 {
+    left: 8.75%;
+}
+
+#heart2 {
+    left: 41.75%;
+}
+
+#heart3 {
+    left: 74.75%;
+}
+
+#stage {
+    background-color: #98AFC7;
+    position: absolute;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: -16.8%;
+    background-color: #3a3a3a;
+}
+
+#overlayText {
+    color: whitesmoke;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 28%;
+    font-size: 250%;
+}
+
+#overlayButton {
+    width: 3.75%;
+    height: 5%;
+    margin-left: 95%;
+    margin-top: 1%;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #cccbbb;
+    opacity: 0.9;
+}
+
+#overlayButton: hover {
+    color: whitesmoke;
+    opacity: 1
+}
+
+#blocker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#rightnav {
+    width: 45%;
+    height: 60%;
+    left: 43%;
+    top: 23.333%;
+    position: absolute;
+    background-size: contain;
+    -webkit-background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 0%;
+}
+
+@-webkit-keyframes heartBeat {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.heartDie {
+    animation: heartBeat 1s forwards;
+}

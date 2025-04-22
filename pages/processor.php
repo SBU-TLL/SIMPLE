@@ -1,4 +1,6 @@
 <?php
+$convert="/usr/bin/convert";
+$identify="/usr/bin/identify";
 $netID = $_SERVER['cn'];
 $uniqueID = uniqid();
 error_reporting(-1);
@@ -55,10 +57,13 @@ if(1==1||$format == 'PSD')
 {
 	//$getLayers="/usr/bin/convert $tmppsd -verbose info: |grep Label ";
 
-	$getLayers="/usr/bin/convert $tmppsd -verbose info: ";
+	$getLayers="$identify -verbose $tmppsd";
+#	print $getLayers;
 	exec($getLayers,$labels);
 	$labels=implode("\n",$labels);
 	preg_match("/geometry: (\d*)x([^\+]*)/sm",$labels,$size,PREG_OFFSET_CAPTURE);
+	
+#print_r($size);
 	$width= $size[1][0];
 	$height= $size[2][0];
 	if($width>$height){
@@ -76,7 +81,8 @@ if(1==1||$format == 'PSD')
 #print_r($size);
 	$size[1]=str_replace("photoshop","",$size[1]);
 #$getLayers="/usr/bin/convert -set dispose Background -coalesce $tmppsd $uniqueDynamic/images/layer.png";
-	$getLayers="/usr/bin/convert -set dispose Background -coalesce  $tmppsd $uniqueDynamic/images/layer.png";
+	$getLayers="$convert -set dispose Background -coalesce  $tmppsd $uniqueDynamic/images/layer.png";
+	#print($getLayers);
 	exec($getLayers,$labels);
 	$i=1;
 	$jsonObject = new stdClass();
@@ -88,12 +94,12 @@ if(1==1||$format == 'PSD')
 	{
 #$getLayers="/usr/bin/convert  -geometry 50x50 -compress none $uniqueIDdir/layer-$i.png +matte -fx a $uniqueIDdir/layer-$i.pbm";
 #$getLayers="/usr/bin/convert  $uniqueIDdir/layer-$i.png -fx 'lightness > 0.3 ? 1 : 0' -geometry 75x75 -compress none $uniqueDynamic/images/layer-$i.pbm";
-		$getLayers="/usr/bin/convert   -geometry 200x200 -compress none  $uniqueDynamic/images/layer-$i.png -fx 'lightness > 0.1 ? 1 : 0'  $uniqueDynamic/images/layer-$i.pbm";
+		$getLayers="$convert -geometry 75x75 -compress none  $uniqueDynamic/images/layer-$i.png -fx 'lightness > 0.1 ? 1 : 0'  $uniqueDynamic/images/layer-$i.pbm";
 
 		exec($getLayers,$labels);
 		
 		
-		$getLayers="/usr/bin/convert   $uniqueDynamic/images/layer-$i.png  -trim  $uniqueDynamic/images/drag-layer-$i.png";
+		$getLayers="$convert   $uniqueDynamic/images/layer-$i.png  -trim  $uniqueDynamic/images/drag-layer-$i.png";
 			exec($getLayers,$labels);
 		//$getLayers="/usr/bin/convert   $uniqueIDdir/layer-$i.png  -trim  $uniqueDynamic/images/drag-layer-$i.png";
 		//exec($getLayers,$labels);
@@ -115,7 +121,7 @@ if(1==1||$format == 'PSD')
 
 
 	$arglist="$uniqueDynamic/images/layer $i $width $height";
-	$mapcreate="python ./quadJSON.py $arglist";
+	$mapcreate="python3 ./quadJSONsmall.py $arglist";
 	exec($mapcreate." 2>&1",$json);
 	$json=implode("\n",$json);
 	
@@ -132,5 +138,6 @@ else
 
 
 ?>
-Your page is available <a href='<?php echo "$uniqueIDdir/"; ?>'> here</a>.
-
+The selector game is available <a href='<?php echo "$uniqueIDdir/index.html"; ?>' target="_blank"> here.</a></br>
+The flash card game is available <a href='<?php echo "$uniqueIDdir/index.html?game=index"; ?> 'target="_blank"> here. </a></br>
+The typing game is available <a href='<?php echo "$uniqueIDdir/index.html?game=typing"; ?>' target="_blank"> here.</a></br>

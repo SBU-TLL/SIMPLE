@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule Monocot_Root/$ ../../resourcesSource/index.html [QSA,NC,L]
+RewriteRule Monocot_Root/index.html$ ../../resourcesSource/index.html [QSA,NC,L]
+#RewriteRule Monocot_Root/resourcesLinked/(.*)$ ../../resourcesSource/resourcesLinked/$1 [QSA,NC,L]
+#RewriteRule ^[^/]+/$ ../../resourcesSource/index.html [QSA,NC,L]
+#RewriteRule ^[^/]+/index.html$ ../../resourcesSource/index.html [QSA,NC,L]
+#RewriteRule ^[^/]+/resourcesLinked/(.*)$ ../../resourcesSource/resourcesLinked/$1 [QSA,NC,L]

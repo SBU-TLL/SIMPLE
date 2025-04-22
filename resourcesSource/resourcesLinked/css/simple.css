@@ -16,11 +16,28 @@
 #dragHome {
     position: absolute;
     z-index: 1000;
-    left: -70%;
+    left: -100%;
 }
+#dragHome img{
+    
+ float:left;   
+}
+#dragHome{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 0;
+	background-color: #98AFC7;
+	padding-top: 0%;
+}
+
+
 
 .map {
     position: absolute;
+     padding:1px;
+ 
 }
 
 #tempMessage {
@@ -81,32 +98,42 @@
 
 #userInput {
     background: transparent;
-    border: none;
+    /* border: none; */			/*	Tony Removed	*/
+    border: thick solid gray;	/*	Tony	*/
     text-align: center;
 }
 
 #healthDisplayBox {
     text-align: center;
     line-height: 200%;
-    background-color: #3a3a3a;
+    /* background-color: #3a3a3a;	Tony	*/
     color: white;
     display: block;
-    border: solid 1rem black;
+    /* border: solid 1rem black;	Tony	*/
     width: 25%;
     height: 5%;
     left: 62.25%;
     bottom: 9%;
     position: absolute;
+	display: flex;				/*	Tony	*/
+	flex-direction: row-reverse;/*	Tony	*/
 }
 
+/*	Tony	*/
+.heart {
+    height: 100%;
+    visibility: visible;
+}
+
+/*	Tony
 #heart1,
 #heart2,
 #heart3 {
-    height: 100%;
-    transform-origin: 0 0;
-    top: 2.5%;
-    position: absolute;
-    visibility: visible;
+	height: 100%;
+	transform-origin: 0 0;
+	top: 2.5%;
+	position: absolute;
+	visibility: visible;
 }
 
 #heart1 {
@@ -120,6 +147,7 @@
 #heart3 {
     left: 74.75%;
 }
+*/
 
 #picture {
     position: absolute;
@@ -167,6 +195,16 @@ ul {
     position: absolute;
 }
 
+#checks {
+    width: 70%;
+    height: 100%;
+    font-size: 75%;
+    left: -10%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
 #headerName {
     width: 90%;
     margin-top: 12%;
@@ -194,6 +232,14 @@ li {
     cursor: pointer;
     background-color: #3a3a3a;
 }
+
+#checks li {	/*	Tony	*/
+	width: 10%;
+}
+
+.right { background-color: green }	/*	Tony	*/
+.right::after { content: '\2713'; }	/*	Tony	*/
+.wrong::after { content: '\00A0'; }	/*	Tony	*/
 
 #message {
     position: relative;
@@ -280,6 +326,7 @@ li {
     padding-top: 0%;
 }
 
+/*	Tony
 #heart1 {
     left: 8.75%;
 }
@@ -291,6 +338,7 @@ li {
 #heart3 {
     left: 74.75%;
 }
+*/
 
 #stage {
     background-color: #98AFC7;

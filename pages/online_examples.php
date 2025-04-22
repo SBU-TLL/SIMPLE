@@ -26,7 +26,21 @@ Click on the links below to view finished image maps:
 
 <div id="linksPreview">
    <a class="sharedProject" href="https://apps.tlt.stonybrook.edu/SIMPLE/uploads/moneal/Eudicot_Root/">Eudicot Root</a>
-   <a class="sharedProject" href="https://apps.tlt.stonybrook.edu/SIMPLE/uploads/moneal/Fish_Heart/">Fish Heart</a>
+<ul>
+<li>
+<a class="sharedProject" href="https://apps.tlt.stonybrook.edu/SIMPLE/uploads/moneal/Fish_Heart/?game=index">Fish Heart (Flash Card)</a>
+</li>
+
+<li>
+<a class="sharedProject" href="https://apps.tlt.stonybrook.edu/SIMPLE/uploads/moneal/Fish_Heart/?game=typing">Fish Heart (Typing)</a>
+</li>
+
+<li>
+<a class="sharedProject" href="https://apps.tlt.stonybrook.edu/SIMPLE/uploads/moneal/Fish_Heart/">Fish Heart (Selector)</a>
+</li>
+
+</ul>
+
    <a class="sharedProject" href="https://apps.tlt.stonybrook.edu/SIMPLE/uploads/moneal/Flower/">Flower</a>
    <a class="sharedProject" href="https://apps.tlt.stonybrook.edu/SIMPLE/uploads/moneal/Free_Energy_Diagram/">Free Energy Diagram</a>
  </div>
