@@ -6,7 +6,7 @@
 -->
   <div id="homeContent">
     <div id="homeTitle">Welcome to Simple Image Mapping Program for Learning Everything <hr></div>
-    <div id="homeWelcome">SIMPLE allows you to take your favorite photo and transform it into an interactive online image map.</div>
+    <div id="homeWelcome">SIMPLE allows you to take any layered PhotoShop or GIMP file and transform it into an interactive online image map.</div>
     <div id="homeTitle">People are using SIMPLE<hr></div>
   <div id="homeUsing">SIMPLE can be applied to a broad range of disciplines.  <!--  Go to <a href="?p=online_examples">Online Examples</a> to see how SIMPLE is already being integrated into the online learning environment.--></div>
     <div id="homeTitle">Start Using SIMPLE Today<hr></div>

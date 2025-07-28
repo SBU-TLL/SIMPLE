@@ -122,6 +122,7 @@ if(1==1||$format == 'PSD')
 
 	$arglist="$uniqueDynamic/images/layer $i $width $height";
 	$mapcreate="python3 ./quadJSONsmall.py $arglist";
+	print($mapcreate);
 	exec($mapcreate." 2>&1",$json);
 	$json=implode("\n",$json);
 	

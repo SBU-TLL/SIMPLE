@@ -35,14 +35,15 @@ class simplevm {
 				function() {
 					var picNum = $(this).attr("class").split(" ")[0];
 					$("#" + picNum).css('background-color','#4e2a7f');
-					viewdom.render('#imagemap',v.img(simplevm.enter([picNum,me.layerInfo])));
+					$("#picture").attr("src", `resourcesDynamic/images/layer-${picNum}.png`);
 				},
 			mouseleave: 
 				function() {
 					var picNum = $(this).attr("class").split(" ")[0];
 					$("#" + picNum).css('background-color','#3a3a3a');
-					viewdom.render('#imagemap',v.img(simplevm.leave(me.layerInfo)));
+					$("#picture").attr("src", 'resourcesLinked/images/system/1px.png');
 				}
 		};
 	}
 }
+

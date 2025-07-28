@@ -1,0 +1,7 @@
+An error occurred:
+Traceback (most recent call last):
+  File "./quadJSONsmall.py", line 153, in main
+    padded_grid, width, height = load_pbm(pbm_name)
+  File "./quadJSONsmall.py", line 24, in load_pbm
+    padded_size = 1 << (max_dim - 1).bit_length()
+AttributeError: 'numpy.int64' object has no attribute 'bit_length'
