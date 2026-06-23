@@ -1,6 +1,8 @@
-AuthType shibboleth
-ShibRequestSetting requireSession 1
-require valid-user
+<IfModule mod_shib>
+    AuthType shibboleth
+    ShibRequestSetting requireSession 1
+    require valid-user
+</IfModule>
 # if require valid-user is hashed out then no shib so no load from /SIMPLE dir
 
 #For now, we comment out that we require our visitor be a student of stony brook university.

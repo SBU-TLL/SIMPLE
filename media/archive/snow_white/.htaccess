@@ -1,6 +1,8 @@
-AuthType shibboleth
-ShibRequestSetting requireSession 1
-require valid-user
+<IfModule mod_shib>
+    AuthType shibboleth
+    ShibRequestSetting requireSession 1
+    require valid-user
+</IfModule>
 
 #For now, we comment out that we require our visitor be a student of stony brook university.
 # require affiliation student@stonybrook.edu
