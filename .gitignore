@@ -1,0 +1,15 @@
+# macOS junk (AppleDouble resource forks + Finder metadata)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# editor/backup + logs
+*.swp
+*.swo
+*~
+*.bak
+*.log
+PHP_errors.log
