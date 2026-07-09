@@ -1,0 +1,44 @@
+# Keep the production image clean and free of dev/VCS/PII/backup material.
+
+# Version control & this build's own files
+.git
+.gitignore
+.dockerignore
+Dockerfile
+
+# Local DDEV development environment + dev-auth mock (never deployed)
+.ddev/
+
+# Local env / secrets — production uses runtime env vars, not files
+.env
+.env.*
+
+# STUDENT PII — must NOT ship (grades committed to VCS; flagged for removal)
+grades.csv
+
+# Backup / old / alternate dirs and files not used by the running app
+resourcesSource_bak/
+uploads_old/
+oldquad/
+*.bak
+*.bak.original
+
+# Build/dev helper scripts (not needed at runtime; runtime uses quadJSONsmall.py)
+remakeJSON.sh
+togglePY.sh
+
+# Dev artifacts / docs / large screenshots
+gemini_debug.log
+test.html
+Screenshot*.png
+*.md
+README*
+
+# OS / editor junk (AppleDouble resource forks, Finder metadata, swap files)
+.DS_Store
+**/.DS_Store
+._*
+**/._*
+Thumbs.db
+*.swp
+*.swo
