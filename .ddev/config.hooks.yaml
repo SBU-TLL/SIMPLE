@@ -1,0 +1,4 @@
+# DDEV-only hooks (auth env mock removed; real SP via shibboleth-auth add-on).
+# hooks:
+#   post-start:
+#     - exec: mkdir -p /var/www/userData/SIMPLE/uploads

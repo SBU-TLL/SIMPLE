@@ -1,0 +1,14 @@
+# DDEV-only: lazy-session Shibboleth activation for the whole app, mirroring
+# the server-level config production uses (the repo's root .htaccess ships with
+# its Shibboleth block commented out; only subdirs like resourcesSource/ gate
+# hard). Lazy = identity attributes ($_SERVER['cn'], ...) are exported wherever
+# a login session exists, while anonymous visitors can still browse the public
+# landing pages. Log in by visiting a gated dir (e.g. /resourcesSource/) or
+# /Shibboleth.sso/Login directly.
+RUN printf '%s\n' \
+    '<Directory /var/www/html/www>' \
+    '    AuthType shibboleth' \
+    '    ShibRequestSetting requireSession false' \
+    '    require shibboleth' \
+    '</Directory>' \
+    > /etc/apache2/conf-enabled/zz-simple-lazy-shib.conf
