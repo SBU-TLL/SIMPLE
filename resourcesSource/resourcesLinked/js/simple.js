@@ -125,10 +125,18 @@ class Simple {
             });
         }
     }
+saveScore(){
+    this.score = this.getGrade() * 100;
+     $.ajax({
+                        url: "resourcesLinked/getData.php",
+                        data: { SimpleName: this.layerInfo.layers[0].lname, currentGame: this.currentGame, score: this.score }
+                });
+}
     wonGame() {
         //Simple.score = 33 * Simple.health + 1;
         this.score = this.getGrade() * 100;
-        if (this.score == 100) {
+	    this.saveScore()     
+   if (this.score == 100) {
             this.overlayCreate("You Won! Perfect!");
         } else {
             this.overlayCreate("You Won! <br>" + "Your Score: " + this.score);
@@ -141,6 +149,8 @@ class Simple {
 		viewdom.render('#healthDisplayBox',v.div());
     }
 	gameOver() {	//	Tony
+	      this.score = this.getGrade() * 100;
+		this.saveScore()
 		this.currentGame = '';
 		this.setMessage("Game Over : " + Math.round(this.getGrade() * 100) + '%');
 	}
@@ -170,12 +180,9 @@ class Simple {
         //TypingGame.destroy();
         //DragGame.destroy();
     }
-    overlayCreate(text) {																				//	Tony
+    overlayCreate(text) {				
+                console.log("he");
 		if (typeof Lti != 'undefined') Lti.submit(this.getGrade(), typeof(LTI)=='undefined'?null:LTI);	//	Tony
-		$.ajax({
-			url: "resourcesLinked/getData.php",
-			data: { SimpleName: this.layerInfo.layers[0].lname, currentGame: this.currentGame, score: this.score }
-		});
 		$("#stage").append(simplev.overlay([text,this]))
 	}
 	overlayDestroy() {
