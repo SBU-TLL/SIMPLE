@@ -4,8 +4,12 @@
 
 #For now, we comment out that we require our visitor be a student of stony brook university.
 # require affiliation student@stonybrook.edu
- DirectoryIndex index.php
- Options +Indexes +FollowSymLinks
+
+DirectoryIndex index.php
+Options +Indexes +FollowSymLinks
+Header unset Access-Control-Allow-Origin
+Header set Access-Control-Allow-Origin "*"
+
 # RewriteCond %{HTTPS} !=on [NC]
 # RewriteRule ^stocki(.*) https://%{HTTP_HOST}%{REQUEST_URI}
 
