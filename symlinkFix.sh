@@ -1,4 +1,4 @@
-TARGET_FOLDER="uploads/moneal/Eudicot_Stem"
+TARGET_FOLDER="www/resourcesForCopy"
 
 find "$TARGET_FOLDER" -type l -lname '/home/tltsecure/apache2/htdocs/SIMPLE/*' | while read -r link; do
   old_target=$(readlink "$link")
