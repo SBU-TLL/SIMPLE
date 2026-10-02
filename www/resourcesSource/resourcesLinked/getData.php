@@ -1,7 +1,7 @@
 <?php
 $dataString = '';
 //$fileName = $_SERVER['cn'].".csv";
-$fileName = implode("/",explode("/",$_SERVER["SCRIPT_FILENAME"],-4))."/grades.csv";
+$fileName = implode("/",explode("/",$_SERVER["SCRIPT_FILENAME"],-3))."/grades.csv";
 
 if(!file_exists($fileName)) {    
     $dataString="SIMPLE, GAME, SCORE, USER\n";

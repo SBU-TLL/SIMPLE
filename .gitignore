@@ -17,4 +17,4 @@ PHP_errors.log
 # Student grades data — env-supplied, never committed (PII)
 grades.csv
 
-uploads
+uploads/
