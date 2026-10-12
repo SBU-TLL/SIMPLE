@@ -127,7 +127,6 @@ class Simple {
     }
 saveScore(){
     this.score = this.getGrade() * 100;
-    console.log("Saving score..." + this.score);
      $.ajax({
                         url: "resourcesLinked/getData.php",
                         data: { SimpleName: this.layerInfo.layers[0].lname, currentGame: this.currentGame, score: this.score }
