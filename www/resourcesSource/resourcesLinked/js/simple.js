@@ -133,7 +133,7 @@ saveScore() {
         ? this.layerInfo.layers[0].lname
         : "Default";
 
-    console.log("Saving score...", this.score);
+   // console.log("Saving score...", this.score);
 
     $.ajax({
         url: "resourcesLinked/getData.php",
@@ -145,10 +145,10 @@ saveScore() {
         }
     })
     .done((response) => {
-        console.log("Server Response:", response);
+       // console.log("Server Response:", response);
     })
     .fail((xhr, status, error) => {
-        console.error("Save Failed:", status, error, xhr.responseText);
+        //console.error("Save Failed:", status, error, xhr.responseText);
     });
 }
     wonGame() {
