@@ -125,12 +125,31 @@ class Simple {
             });
         }
     }
-saveScore(){
+saveScore() {
     this.score = this.getGrade() * 100;
-     $.ajax({
-                        url: "resourcesLinked/getData.php",
-                        data: { SimpleName: this.layerInfo.layers[0].lname, currentGame: this.currentGame, score: this.score }
-                });
+
+    // Guard against undefined layerInfo properties
+    const simpleName = (this.layerInfo && this.layerInfo.layers && this.layerInfo.layers[0])
+        ? this.layerInfo.layers[0].lname
+        : "Default";
+
+    console.log("Saving score...", this.score);
+
+    $.ajax({
+        url: "resourcesLinked/getData.php",
+        type: "POST",
+        data: {
+            SimpleName: simpleName,
+            currentGame: this.currentGame,
+            score: this.score
+        }
+    })
+    .done((response) => {
+        console.log("Server Response:", response);
+    })
+    .fail((xhr, status, error) => {
+        console.error("Save Failed:", status, error, xhr.responseText);
+    });
 }
     wonGame() {
         //Simple.score = 33 * Simple.health + 1;
